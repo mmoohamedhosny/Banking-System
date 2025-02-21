@@ -31,12 +31,13 @@ int main() {
             cout << "  *                                            *\n";
             cout << "  **********************************************\n";
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-            while (true) {
-                cout << " >> Please enter your choice: ";
-                cin >> choice;
-                cout << endl;
-                if (!cin.fail() && choice >= 1 && choice <= 3) {
-                    break;                           // الإدخال صحيح  نخرج من اللوب
+            while (true) {                                                   //دي عشان لو المستخدم دخل حاجة غير متوافقة مع نوع المتغير cin.fai 
+                cout << " >> Please enter your choice: ";                   
+                cin >> choice;                                                
+                cout << endl;                                          // cin.fail  >> true ف لما اعملها نفي تاني هترجع !true الادخال خطأ وهي اصلا بترجع 
+                if (!cin.fail() && choice >= 1 && choice <= 3) {     // !cin.fail >>    و الشرط هيتحقق ف هيخرج من اللوب true الادخال صحيح يعني هترجع 
+                    break;                            
+                                                                // الإدخال صحيح  نخرج من اللوب
                 }
 
                 cout << " Invalid input! Please enter a number between 1 and 3.\n\n";
